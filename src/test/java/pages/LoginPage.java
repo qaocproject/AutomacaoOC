@@ -16,12 +16,12 @@ public class LoginPage {
 
     public void realizaLogin(String usuario, String senha){
 
-        loginMaps.inpUsuario.sendKeys(usuario);
-        loginMaps.inpSenha.sendKeys(senha);
+        loginMaps.inpUsuario.sendKeys("felipe.rocha");
+        loginMaps.inpSenha.sendKeys("239239");
         loginMaps.btnLogin.click();
     }
 
-    public String getlinkTagHomologacao(){
-        return loginMaps.linkTagHomologacao.getText();
+    public String getlinkTituloTelaInicial(){
+        return loginMaps.linkTituloTelaInicial.getText();
     }
 }

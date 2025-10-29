@@ -4,6 +4,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static org.junit.Assert.assertNotNull;
+
 public class Driver {
     private static WebDriver driver;
 
@@ -16,5 +18,12 @@ public class Driver {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
 
+    }
+    public static void mudarjanela(int janela){
+
+        String currHandle = getDriver().getWindowHandle();
+        assertNotNull(currHandle);
+        Object[] windowHandles = driver.getWindowHandles().toArray();
+        driver.switchTo().window((String)windowHandles[janela]);
     }
 }

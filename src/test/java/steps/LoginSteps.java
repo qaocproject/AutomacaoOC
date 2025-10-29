@@ -25,6 +25,7 @@ public void inicializaTeste(){
     @Dado("que esteja na pagina do OC")
     public void queEstejaNaPaginaDoOC() {
     Driver.getDriver().get("http://140.1.254.171:3030/portal2OC/faces/ocindex.jsp");
+    Driver.mudarjanela(1);
     loginPage = new LoginPage();
     }
 
@@ -38,7 +39,7 @@ public void inicializaTeste(){
 
     @Entao("valido que o login foi realizado")
     public void validoQueOLoginFoiRealizado() {
-        assertEquals("AUTBANK",loginPage.getlinkTagHomologacao());
+        assertEquals("Mensagens do sistema",loginPage.getlinkTituloTelaInicial());
     }
 }
 
