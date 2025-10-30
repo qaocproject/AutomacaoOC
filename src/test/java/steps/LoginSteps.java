@@ -5,6 +5,8 @@ import io.cucumber.java.Before;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
+import maps.LoginMaps;
+import org.openqa.selenium.WebElement;
 import pages.LoginPage;
 
 import java.util.Map;
@@ -22,6 +24,7 @@ public void inicializaTeste(){
     Driver.inicializaNavegador();
 }
 
+
     @Dado("que esteja na pagina do OC")
     public void queEstejaNaPaginaDoOC() {
     Driver.getDriver().get("http://140.1.254.171:3030/portal2OC/faces/ocindex.jsp");
@@ -37,9 +40,26 @@ public void inicializaTeste(){
 
     }
 
-    @Entao("valido que o login foi realizado")
-    public void validoQueOLoginFoiRealizado() {
-        assertEquals("Mensagens do sistema",loginPage.getlinkTituloTelaInicial());
+    @Quando("clicar no botao continuar")
+    public void clicarNoBotaoContinuar() {
+    loginPage.clicanobotaocontinuar();
+
     }
+    @Quando("selecionar Empresa")
+    public void selecionarEmpresa() {
+
+    loginPage.selecionaempresa();
+    }
+    @Quando("clicar no botao OK")
+    public void clicarNoBotaoOK() {
+
+    loginPage.clicanobotaook();
+    }
+    @Entao("valido que a pagina incial e exibida")
+    public void validoQueAPaginaIncialEExibida() {
+
+    loginPage.validaPaginaInicial();
+    }
+
 }
 
