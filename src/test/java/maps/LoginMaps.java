@@ -16,6 +16,9 @@ public class LoginMaps {
     @FindBy(id="frmcaindex:btnOk")
     public WebElement btnLogin;
 
+    @FindBy(xpath="/html/body/div[3]/div/div/div[7]/div[1]/p/a")
+    public WebElement btnOc;
+
     //tag de homologação por ambiente, alterar o mapeamento se for usar em outro ambiente
     @FindBy(id="frmcaindex:id_AB_MODO_HOMOLOGACAO")
     public WebElement linkTagHomologacao;
@@ -23,18 +26,22 @@ public class LoginMaps {
     @FindBy(id="page:frmSideMenu:divTituloTela")
     public WebElement linkTituloTelaInicial;
 
-    @FindBy(xpath = "//input[name='page:frmSideMenu:_id44']")
+    @FindBy(xpath = "/html/body/div[4]/div[2]/div/form/div[4]/input")
     public WebElement btnContinuar;
 
 
-    @FindBy(xpath="//select[id='page:frmoc_filtroini:codcoligada']")
+    @FindBy(xpath="/html/body/div[4]/div[2]/div/form/div[2]/select")
     public WebElement selectEmpresa;
 
 
-    @FindBy(xpath="//input[name='page:frmoc_filtroini:_id46']")
+    @FindBy(xpath="/html/body/div[4]/div[2]/div/form/div[6]/input")
     public WebElement btnOk;
 
-    @FindBy(xpath="//span[id='frmTopLayoutDoubleMenu:navbar']")
-    public WebElement tituloPaginaInicial;
+
+    @FindBy(xpath = "/html/body/div[4]/form/table/tbody/tr/td[1]/div/span")
+    public WebElement divtelainicial;
+
+    @FindBy(xpath = "/html/body/div[4]/div[1]/div")
+    public WebElement logo;
 
 }

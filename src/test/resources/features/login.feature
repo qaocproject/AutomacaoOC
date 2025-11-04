@@ -9,7 +9,7 @@ Funcionalidade: login OC
       | senha   | admin |
     E clicar no botao continuar
     E selecionar Empresa
-    E clicar no botao OK
+    E clicar no botao Ok
     Entao valido que a pagina incial e exibida
 
 

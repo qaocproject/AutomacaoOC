@@ -16,12 +16,15 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(),loginMaps);
     }
 
-    public void realizaLogin(String usuario, String senha){
-
+    public void realizaLogin(String usuario, String senha) {
+        Driver.esperaelemento(loginMaps.inpUsuario);
         loginMaps.inpUsuario.sendKeys("felipe.rocha");
         loginMaps.inpSenha.sendKeys("239239");
         loginMaps.btnLogin.click();
+        Driver.mudarjanela(1);
     }
+
+
 
     public String getlinkTituloTelaInicial(){
         return loginMaps.linkTituloTelaInicial.getText();
@@ -29,13 +32,15 @@ public class LoginPage {
 
     public void clicanobotaocontinuar(){
 
-     Driver.esperaelemento(loginMaps.btnContinuar);
-     loginMaps.btnContinuar.click();
-
+        Driver.identificajanela("main");
+        Driver.esperaelemento(loginMaps.btnContinuar);
+        loginMaps.btnContinuar.click();
     }
 
     public void selecionaempresa(){
 
+        Driver.mudarjanela(1);
+        Driver.identificajanela("main");
         Driver.esperaelemento(loginMaps.selectEmpresa);
         Select select = new Select(loginMaps.selectEmpresa);
         select.selectByValue("001");
@@ -43,14 +48,16 @@ public class LoginPage {
     }
 
     public  void clicanobotaook(){
+
+
         Driver.esperaelemento(loginMaps.btnOk);
         loginMaps.btnOk.click();
     }
 
     public void validaPaginaInicial(){
-
-        Driver.esperaelemento(loginMaps.tituloPaginaInicial);
-        Assert.assertEquals("OC",loginMaps.tituloPaginaInicial.getText());
+        Driver.titulo();
+        Driver.esperaelemento(loginMaps.divtelainicial);
+        Assert.assertEquals("OC",loginMaps.divtelainicial.getText());
 
     }
 
